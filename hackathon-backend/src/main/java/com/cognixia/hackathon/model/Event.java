@@ -15,18 +15,19 @@ public class Event {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "event_id")
 	private int eventId;
 
-	@Column(name = "eventName")
+	@Column(name = "event_name")
 	private String eventName;
 
-	@Column(name = "eventDescription")
+	@Column(name = "event_description")
 	private String eventDescription;
 
 	@Column(name = "img_url")
 	private String eventImg;
 
-	@Column(name = "eventDate")
+	@Column(name = "event_date")
 	private Date eventDate;
 	
 	public Event() {
