@@ -1,27 +1,30 @@
 package com.cognixia.hackathon.controller;
 
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+import com.cognixia.hackathon.dao.EventDAO;
 import com.cognixia.hackathon.dao.OrderDAO;
 import com.cognixia.hackathon.dao.ProductDAO;
 import com.cognixia.hackathon.dao.SearchedDAO;
 import com.cognixia.hackathon.dao.ShoppingCartDAO;
 import com.cognixia.hackathon.dao.UserDAO;
 import com.cognixia.hackathon.dao.ViewedDAO;
+import com.cognixia.hackathon.model.Event;
 import com.cognixia.hackathon.model.Order;
 import com.cognixia.hackathon.model.Product;
 import com.cognixia.hackathon.model.Searched;
 import com.cognixia.hackathon.model.ShoppingCart;
 import com.cognixia.hackathon.model.User;
 import com.cognixia.hackathon.model.Viewed;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
 
 import javassist.NotFoundException;
 
+@RequestMapping("/api")
 @RestController
 public class HackathonController {
 	
@@ -37,8 +40,8 @@ public class HackathonController {
 	SearchedDAO searchedRepo;
 	@Autowired
 	ViewedDAO viewedRepo;
-
-	//
+	@Autowired
+	EventDAO eventRepo;
 	
 	//I only added dummy data into the User Table, the following function should print out 5 empty lists, but if you check
 	//the URL you should see the dummy data I put in
@@ -61,7 +64,6 @@ public class HackathonController {
 		return orderRepo.findAll();
 	}
 
-
 	// User resources 
 	@GetMapping("user/{id}")
 	public User getUserById(@PathVariable int id) throws NotFoundException {
@@ -73,6 +75,11 @@ public class HackathonController {
 	public List<Order> getOrdersByUserId(@PathVariable int id) {
 		List<Order> orders = orderRepo.findAllByUserId(id);
 		return orders;
+	}
+
+	@GetMapping("/events")
+	public List<Event> getAllEvents() {
+		return eventRepo.findAll();
 	}
 
 	//get all searched items by user id
