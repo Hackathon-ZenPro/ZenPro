@@ -10,23 +10,23 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "events")
+@Table(name = "zevents")
 public class Event {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int eventId;
 
-	@Column(name = "name")
+	@Column(name = "eventName")
 	private String eventName;
 
-	@Column(name = "description")
+	@Column(name = "eventDescription")
 	private String eventDescription;
 
 	@Column(name = "img_url")
 	private String eventImg;
 
-	@Column(name = "date")
+	@Column(name = "eventDate")
 	private Date eventDate;
 	
 	public Event() {
