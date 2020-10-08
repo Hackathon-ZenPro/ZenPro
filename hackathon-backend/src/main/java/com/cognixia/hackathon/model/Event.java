@@ -1,5 +1,6 @@
 package com.cognixia.hackathon.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -11,7 +12,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "zevents")
-public class Event {
+public class Event implements Serializable {
+
+	private static final long serialVersionUID = 4255140733181146948L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

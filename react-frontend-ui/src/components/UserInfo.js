@@ -24,25 +24,26 @@ export default class UserInfo extends React.Component{
             })
     }
 
+    
     render(){
         return(
             <div>
-                <table className="history" style={{marginLeft:"auto", marginRight:"auto"}}>
-					<tr className="history">
-						<th className="history">User Id</th>
-						<th className="history">First Name</th>
-						<th className="history">Last Name</th>
-						<th className="history">Address</th>
-						<th className="history">Contact Number</th>
-						<th className="history">Password</th>
+                <table  style={{marginLeft:"auto", marginRight:"auto"}}>
+					<tr >
+						<th >User Id</th>
+						<th >First Name</th>
+						<th >Last Name</th>
+						<th >Address</th>
+						<th >Contact Number</th>
+						<th >Password</th>
 					</tr>
 					<tr key = {this.state.user.id}>
-						<td className="history">{this.state.user.userId}</td>
-						<td className="history">{this.state.user.firstName}</td>
-						<td className="history">{this.state.user.lastName}</td>
-						<td className="history">{this.state.user.address}</td>
-						<td className="history">{this.state.user.contactNumber}</td>
-						<td className="history">{this.state.user.userPassword}</td>
+						<td >{this.state.user.userId}</td>
+						<td >{this.state.user.firstName}</td>
+						<td >{this.state.user.lastName}</td>
+						<td >{this.state.user.address}</td>
+						<td >{this.state.user.contactNumber}</td>
+						<td >{this.state.user.userPassword}</td>
 					</tr>
 				</table >
             </div>
