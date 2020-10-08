@@ -5,7 +5,7 @@ import "../App.css";
 function Hero() {
   return (
     <div className="hero-container">
-      <div clasName="hero-img">
+      <div className="hero-img">
         <img src="/hero-placeholder1" alt="Woman Running" />
       </div>
     </div>
