@@ -1,16 +1,25 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import TokenService from '../services/TokenService'
-
-
-export default class Events extends React.Component{
-    render(){
-        return(
-           <div>
-                Events text
-                <Link to = '/'><button >Home</button></Link>{/* Going to be a clickable logo*/}
-            </div> 
-        )
-        
-    }
+import React, { Component } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+ 
+class Event extends Component {
+  state = {
+    date: new Date(),
+  }
+ 
+  onChange = date => this.setState({ date })
+ 
+  render() {
+    return (
+      <div>
+        <Calendar
+          onChange={this.onChange}
+          value={this.state.date}
+          minDate={new Date()}
+        />
+      </div>
+    );
+  }
 }
+
+export default Event;

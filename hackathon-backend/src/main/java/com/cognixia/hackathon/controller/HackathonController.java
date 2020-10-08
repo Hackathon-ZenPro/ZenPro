@@ -116,9 +116,9 @@ public class HackathonController {
 	@PostMapping("/user/cart/{id}") //addtocart mapping
 	//request body
 	public void addProductToUserCart(@RequestBody int productId, @PathVariable int userId){
-		ShoppingCart temp = new ShoppingCart(userId, productRepo.findByProductId(productId), 1, "Large");
-		System.out.println(temp.toString());
-		shoppingCartRepo.save(temp);
+		//ShoppingCart temp = new ShoppingCart(userId, productRepo.findByProductId(productId), 1, "Large");
+		// System.out.println(temp.toString());
+		// shoppingCartRepo.save(temp);
 		//save to shoppingcart
 	 }
 	
