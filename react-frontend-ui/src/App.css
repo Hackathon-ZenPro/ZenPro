@@ -2,6 +2,14 @@ img {
   height: 75px;
 }
 
+
+.homePage {
+  background-image: url('https://lh3.googleusercontent.com/proxy/HPQ03_pbU84q1RtHQN2PgJQ5D5cYRmjiJqX6o3s8Nb2eakwlaiHkB74_OHfTaL_HqNlPD4DT5yv8BLpUHkluduSno576LP0PxXsNKI_DjU_lSKvhYj0QSlzjw0g');
+  
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh
+}
 .navbar {
   background: #006555;
   height: 80px;
