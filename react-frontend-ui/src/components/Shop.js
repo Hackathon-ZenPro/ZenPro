@@ -1,6 +1,10 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import '../App.css';
+
+
+
 
 export default class Shop extends React.Component{
     constructor(props){
@@ -45,6 +49,7 @@ export default class Shop extends React.Component{
                     </tbody>
                 </table>
             </div>
+
         )
     }
 

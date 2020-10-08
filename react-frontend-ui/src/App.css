@@ -1,3 +1,50 @@
+img {
+  height: 75px;
+}
+
+.navbar {
+  background: #006555;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  padding: 30px;
+  align-items: center;
+  font-size: 18px;
+}
+
+.navbar-container {
+  display: flex;
+}
+
+.nav-menu-items {
+  display: flex;
+  color: #fff;
+  align-items: center;
+}
+
+.nav-icons {
+  display: flex;
+  color: #fff;
+  align-items: flex-end;
+}
+
+a {
+  color: #fff;
+}
+
+.hero-container {
+  background: #006555;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 500px;
+  align-items: center;
+}
+
+.hero-img {
+  width: 80%;
+
+}
 .App {
   text-align: center;
 }
