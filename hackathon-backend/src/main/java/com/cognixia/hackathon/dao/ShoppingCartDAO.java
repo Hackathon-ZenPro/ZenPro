@@ -9,5 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface ShoppingCartDAO extends JpaRepository<ShoppingCart, Integer>{
 	List<ShoppingCart> findAll();
 	List<ShoppingCart> findAllInCartByUserId(int userId);
+
 	
 }

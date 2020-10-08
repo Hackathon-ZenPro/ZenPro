@@ -29,6 +29,11 @@ public class ShoppingCart {
 	public ShoppingCart() {
 		super();
 	}
+
+	//try to make a constructor for product maybe make it a list
+	public ShoppingCart(int userId, Product product) {
+	}
+
 	public int getEntryId() {
 		return entryId;
 	}
