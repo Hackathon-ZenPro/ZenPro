@@ -6,8 +6,8 @@ import {  Button } from 'react-bootstrap';
 function Hero() {
   return (
     <div className="hero-container">
-      <div clasName="hero-img">
-        <img src="images/hero-placeholder1.jpg" alt="Woman Running" />
+      <div className="hero-img">
+        <img src="hero-placeholder1" alt="Woman Running" />
       </div>
       <Button variant="productsTwitter" href="https://twitter.com/search?q=zenprosports&src=typed_query">See our products in action!</Button>{' '}
 

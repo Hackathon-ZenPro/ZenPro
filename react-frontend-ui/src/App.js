@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
 import "./App.css";
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
 import Home from "./components/Home"
