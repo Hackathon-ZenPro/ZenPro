@@ -14,7 +14,7 @@ function App() {
   return (
     <>
 <div className="homePage">
-<Container fluid>
+
       <BrowserRouter /*style={{justifyContent: "center",alignItems: "center"}}*/>
         <Navbar/>
         
@@ -27,7 +27,6 @@ function App() {
             </Switch>
             
           </BrowserRouter>
-          </Container>
       </div>
       
     </>

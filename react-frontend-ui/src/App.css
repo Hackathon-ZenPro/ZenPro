@@ -113,7 +113,7 @@ div.sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 30px;
-  background-color: rgb(250, 250, 255);
+  background-color: rgb(255, 255, 255);
   height:700px;
   width:500px;
   width:20%;
@@ -121,4 +121,31 @@ div.sticky {
   padding: 20px;
   border:1px solid rgb(29, 161 ,242);
   border-radius: 10px;
+  margin-top: 25px;
+}
+
+.sizeButton{
+  background-color: white;
+  margin: 5px;
+  border:1px solid black;
+  border-radius: 2px;
+  transition:0.2s;
+  padding:5px 10px 5px;
+}
+
+.cartButton{
+  background-color: white;
+  margin: 5px;
+  border:1px solid black;
+  border-radius: 2px;
+  transition:0.2s;
+
+}
+
+.sizeButton:hover{
+  box-shadow: 1px 1px 5px #aaaaaa;
+}
+
+.cartButton:hover{
+  box-shadow: 1px 1px 5px #aaaaaa;
 }
