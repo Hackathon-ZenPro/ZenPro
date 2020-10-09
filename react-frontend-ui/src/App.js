@@ -1,13 +1,14 @@
 import React from "react";
-import Navbar from "./components/Navbar";
+//import Navbar from "./components/Navbar";
 import "./App.css";
+
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
 import Home from "./components/Home"
+import ReactNavbar from "./components/ReactNavbar"
 import Shop from "./components/Shop"
 import Events from "./components/Events"
 import ShoppingCart from "./components/ShoppingCart"
 import UserInfo from './components/UserInfo'
-import {  Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
 <div className="homePage">
 
       <BrowserRouter /*style={{justifyContent: "center",alignItems: "center"}}*/>
-        <Navbar/>
+        <ReactNavbar/>
         
             <Switch>
               <Route path='/shop' component={Shop}  />
@@ -27,6 +28,7 @@ function App() {
             </Switch>
             
           </BrowserRouter>
+
       </div>
       
     </>

@@ -1,16 +1,22 @@
 import React from "react";
 import "../App.css";
-import {  Button } from 'react-bootstrap';
+import {  Button, Container } from 'react-bootstrap';
+import Carousel from "./ReactCarousel"
 
 // TODO why isn't img displaying
 function Hero() {
   return (
-    <div className="hero-container">
-      <div className="hero-img">
-        <img src="hero-placeholder1" alt="Woman Running" />
+    <div className="w-50 m-auto">
+    <Container fluid>
+      <div className="myborder h-50">
+      <Button  variant="secondary" size="lg" href="https://twitter.com/search?q=zenprosports&src=typed_query" block>See our products in action!</Button>{' '}
       </div>
-      <Button variant="productsTwitter" href="https://twitter.com/search?q=zenprosports&src=typed_query">See our products in action!</Button>{' '}
+      <div className="hero-img">
+        <Carousel/>
+      </div>
+      
 
+      </Container>
       </div>
   );
 }
