@@ -1,5 +1,8 @@
 import React from 'react'
 import axios from 'axios'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+
 
 export default class TwitterDiv extends React.Component{
 
@@ -11,11 +14,11 @@ export default class TwitterDiv extends React.Component{
     }
 
     componentDidMount(){
-        this.findProducts()
+        this.findTweets()
     }
 
-    findProducts(){
-        var url = "http://localhost:8080/api/products"      ///Insert URL for tweets call
+    findTweets(){
+        var url = "http://localhost:8080/api/tweets"
         axios.get(url)
             .then(response => response.data)
             .then((data) => {
@@ -27,7 +30,22 @@ export default class TwitterDiv extends React.Component{
     render(){
         return(
             <div>
-                <h2 style={{color:"rgb(29, 161 ,242)"}}>What do our customers recommend?</h2> 
+
+                <div style={{marginRight:"10px"}}>
+                    <FontAwesomeIcon icon ={faTwitter} style={{fontSize:"50px", color:"rgb(29, 161 ,242)", float:"left"}}/>
+                </div>
+
+                <h3 style={{color:"rgb(29, 161 ,242)"}}>&nbsp;What are our users &nbsp;recommending?</h3> 
+                
+                {this.state.tweets.map((tweet) => (
+                    <div id = {tweet.userName} >
+                        <hr/>
+                        <img src={tweet.profilePic} alt="API Error" style={{width:"35px", height:"auto", borderRadius:"50%"}}/>
+                        <span> {tweet.username} | </span><span style={{color:"grey"}}>{tweet.userTag}</span>
+                        <p>{tweet.text}</p>
+                        
+                    </div>
+                ))}
 
 
             </div>
