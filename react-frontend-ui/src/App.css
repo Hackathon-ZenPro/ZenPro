@@ -1,4 +1,15 @@
 
+img {
+  height: 75px;
+}
+
+.sticky{
+  width: 23% !important;
+  border: 1px solid #006555 !important;
+  color: #006555;
+  height: 755px !important;
+}
+
 .navbar {
   background: #006555;
   
