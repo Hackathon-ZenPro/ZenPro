@@ -80,16 +80,4 @@ class Events extends Component {
     }
 }
 
-function App() {
-    const [modalIsOpen, setModalIsOpen] = useState(false)
-
-    return (
-        <div className = "App">
-            <Modal isOpen={true}>
-
-            </Modal>
-        </div>
-    )
-}
-
 export default Events;
