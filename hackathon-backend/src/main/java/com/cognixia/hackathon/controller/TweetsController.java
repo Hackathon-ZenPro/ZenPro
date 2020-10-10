@@ -7,13 +7,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RequestMapping("/api")
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class TweetsController {
     @Autowired
     TweetsDAO service;
+    
+    @GetMapping("/tweets")
+    public List <Tweets> findAll(){
+    	return service.findAll();
+    }
+    
     @GetMapping("/tweets/{username}")
     public Tweets getTweetsByUsername(@PathVariable String username) {
         Optional<Tweets> found = service.findByUsername(username);
