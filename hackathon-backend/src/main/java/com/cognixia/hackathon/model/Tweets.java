@@ -1,5 +1,6 @@
 package com.cognixia.hackathon.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -9,13 +10,16 @@ import javax.persistence.Table;
 public class Tweets {
     @Id
     private String username;
+    @Column(name="user_text")
     private String text;
     private String profilePic;
+    private String userTag;
 
-    public Tweets(String username,  String text, String profilePic) {
+    public Tweets(String username,  String text, String profilePic, String userTag) {
         this.username = username;
         this.text = text;
         this.profilePic = profilePic;
+        this.userTag =userTag;
     }
 
     public Tweets() {
@@ -54,4 +58,12 @@ public class Tweets {
                 ", text='" + text + '\'' +
                 '}';
     }
+
+	public String getUserTag() {
+		return userTag;
+	}
+
+	public void setUserTag(String userTag) {
+		this.userTag = userTag;
+	}
 }
