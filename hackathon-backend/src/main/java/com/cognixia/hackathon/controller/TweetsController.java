@@ -1,5 +1,6 @@
 package com.cognixia.hackathon.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import com.cognixia.hackathon.model.Tweets;
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 public class TweetsController {
+
 	@Autowired
 	TweetsDAO service;
 
@@ -31,6 +33,11 @@ public class TweetsController {
 			System.out.println("This tweet doesn't exists.");
 		}
 		return found.get();
+	}
+
+	@GetMapping("/tweets")
+	public List<Tweets> findAll() {
+		return service.findAll();
 	}
 
 	@PostMapping("/add/tweet")
