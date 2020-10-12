@@ -104,6 +104,8 @@ public class HackathonController {
 		return new Event();
 	}
 	
+
+	
 	@PostMapping("/events/add")
 	public void addEvent(@RequestBody Event event) {
 		event.setEventId(0);

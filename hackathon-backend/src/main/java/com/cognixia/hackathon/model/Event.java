@@ -31,13 +31,13 @@ public class Event implements Serializable {
 	private String eventImg;
 
 	@Column(name = "event_date")
-	private Date eventDate;
+	private String eventDate;
 	
 	public Event() {
-		this(0, "N/A", "N/A", "N/A", new Date());
+		this(0, "N/A", "N/A", "N/A", "");
 	}
 
-	public Event(int eventId, String eventName, String eventDescription, String eventImg, Date eventDate) {
+	public Event(int eventId, String eventName, String eventDescription, String eventImg, String eventDate) {
 		super();
 		this.eventId = eventId;
 		this.eventName = eventName;
@@ -78,11 +78,11 @@ public class Event implements Serializable {
 		this.eventImg = eventImg;
 	}
 
-	public Date getEventDate() {
+	public String getEventDate() {
 		return eventDate;
 	}
 
-	public void setEventDate(Date eventDate) {
+	public void setEventDate(String eventDate) {
 		this.eventDate = eventDate;
 	}
 

@@ -8,4 +8,5 @@ import com.cognixia.hackathon.model.Event;
 
 public interface EventDAO extends JpaRepository<Event, Integer>{
 	List<Event> findAll();
+	Event getEventByEventId(int id);
 }
