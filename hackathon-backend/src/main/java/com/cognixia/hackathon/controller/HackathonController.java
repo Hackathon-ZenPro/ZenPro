@@ -8,6 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,11 +30,6 @@ import com.cognixia.hackathon.model.Searched;
 import com.cognixia.hackathon.model.ShoppingCart;
 import com.cognixia.hackathon.model.User;
 import com.cognixia.hackathon.model.Viewed;
-
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import javassist.NotFoundException;
 
@@ -73,19 +72,13 @@ public class HackathonController {
 		return productRepo.findAll();
 	}
 
-	@GetMapping("/product/{id}")
-	public Product getProductById(@PathVariable int productId) {
-		Product product = productRepo.findByProductId(productId);
-		return product;
-	}
-	
 	@GetMapping("/orders")
 	public List<Order> getAllOrders() {
 		return orderRepo.findAll();
 	}
 
-	// User resources 
-	@GetMapping("/user/{id}")
+	// User resources
+	@GetMapping("user/{id}")
 	public User getUserById(@PathVariable int id) throws NotFoundException {
 		User user = userRepo.findByUserId(id);
 		return user;
@@ -96,95 +89,80 @@ public class HackathonController {
 		List<Order> orders = orderRepo.findAllByUserId(id);
 		return orders;
 	}
-	
+
 	@GetMapping("/events")
 	public List<Event> getAllEvents() {
 		return eventRepo.findAll();
 	}
-	
+
 	@GetMapping("/events/{id}")
 	public Event getEventById(@PathVariable int id) {
 		Optional<Event> event = eventRepo.findById(id);
-		
-		if(event.isPresent()) {
+
+		if (event.isPresent()) {
 			return event.get();
 		}
-		
+
 		return new Event();
 	}
-	
+
 	@PostMapping("/events/add")
 	public void addEvent(@RequestBody Event event) {
 		event.setEventId(0);
-		
+
 		Event added = eventRepo.save(event);
-		
+
 		System.out.println("Added: " + added);
 	}
-	
+
 	@PutMapping("/events/update")
 	public @ResponseBody String updateEvent(@RequestBody Event event) {
-		
+
 		Optional<Event> found = eventRepo.findById(event.getEventId());
-		
-		if(found.isPresent()) {
+
+		if (found.isPresent()) {
 			eventRepo.save(event);
 			return "Saved: " + event.toString();
-		}else {
+		} else {
 			return "Could not update event";
 		}
-		
+
 	}
-	
+
 	@DeleteMapping("/delete/event/{id}")
 	public ResponseEntity<String> deleteEvent(@PathVariable int id) {
-		
+
 		Optional<Event> found = eventRepo.findById(id);
-		
-		if(found.isPresent()) {
+
+		if (found.isPresent()) {
 			eventRepo.deleteById(id);
-			
+
 			return ResponseEntity.status(200).body("Event has been deleted");
-			
-		}else {
+
+		} else {
 			return ResponseEntity.status(400).header("Event id", id + "").body("Event not found");
 		}
 	}
 
-	//get all searched items by user id
-	@GetMapping("/user/searched/{id}")
-	public List<Searched> findAllSearchedByUserId(@PathVariable int id){
-		List<Searched> searched =  searchedRepo.findAllSearchedByUserId(id);
+	// get all searched items by user id
+	@GetMapping("user/searched/{id}")
+	public List<Searched> findAllSearchedByUserId(@PathVariable int id) {
+		List<Searched> searched = searchedRepo.findAllSearchedByUserId(id);
 		return searched;
 	}
 	//-- post mapping Add an searched object to searched repo
 
-	//Get all objects in shopping cart by userid of user
-	@GetMapping("/user/cart/{id}")
-		public List<ShoppingCart> findAllInCartByUserId(@PathVariable int id){
-			List<ShoppingCart> shoppingCart =  shoppingCartRepo.findAllInCartByUserId(id);
-			return shoppingCart;
-		}
-	
-		//a post method for adding a product 
-	//in the shopping cart of a specific user 
-	//the post mapping function would take in as
-	// inputs: userId, productId, and productSize
-	@PostMapping("/user/cart/{id}") //addtocart mapping
-	//request body
-	public void addProductToUserCart(@RequestBody int productId, @PathVariable int userId){
-		//ShoppingCart temp = new ShoppingCart(userId, productRepo.findByProductId(productId), 1, "Large");
-		// System.out.println(temp.toString());
-		// shoppingCartRepo.save(temp);
-		//save to shoppingcart
-	 }
-	
+	// Get all objects in shopping cart by userid of user
+	@GetMapping("user/cart/{id}")
+	public List<ShoppingCart> findAllInCartByUserId(@PathVariable int id) {
+		List<ShoppingCart> shoppingCart = shoppingCartRepo.findAllInCartByUserId(id);
+		return shoppingCart;
+	}
 
-
-	//view browse history of items by userid
-	@GetMapping("/user/history/{id}")
-	public List<Viewed> findAllViewedByUserId(@PathVariable int id){
-		List<Viewed> browse_history =  viewedRepo.findAllViewedByUserId(id);
+	// view browse history of items by userid
+	@GetMapping("user/history/{id}")
+	public List<Viewed> findAllViewedByUserId(@PathVariable int id) {
+		List<Viewed> browse_history = viewedRepo.findAllViewedByUserId(id);
 		return browse_history;
 	}
 	//-- post mapping to Add viewed object to repo
