@@ -29,7 +29,7 @@ export default class TwitterDiv extends React.Component{
 
     render(){
         return(
-            <div>
+            <div style={{border:"blue"}}>
 
                 <div style={{marginRight:"10px"}}>
                     <FontAwesomeIcon icon ={faTwitter} style={{fontSize:"50px", color:"rgb(29, 161 ,242)", float:"left"}}/>
@@ -41,8 +41,8 @@ export default class TwitterDiv extends React.Component{
                     <div id = {tweet.userName} >
                         <hr/>
                         <img src={tweet.profilePic} alt="API Error" style={{width:"35px", height:"auto", borderRadius:"50%"}}/>
-                        <span> {tweet.username} | </span><span style={{color:"grey"}}>{tweet.userTag}</span>
-                        <p>{tweet.text}</p>
+                        <span style={{color:"black"}}> {tweet.username} | </span><span style={{color:"grey"}}>{tweet.userTag}</span>
+                        <p style={{textAlign:"left", color:"black"}}>{tweet.text}</p>
                         
                     </div>
                 ))}
