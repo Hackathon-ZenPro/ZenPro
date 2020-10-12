@@ -1,4 +1,8 @@
 
+html,body{
+  background-color: rgb(254, 255, 254);
+}
+
 .myBorder{
   border-radius: 0 !important;
 }
@@ -24,7 +28,10 @@
 
 .navbar {
   background: #006555;
-  
+  width:80%;
+  margin-left:10%;
+  font-size: 20px;
+  border-radius: 5px;
 }
 
 
@@ -35,7 +42,12 @@
 
 .nav-menu-items {
   color: #fff;
+  transition: 0.2s;
 }
+.nav-menu-items:hover {
+  color:lightgrey;
+}
+
 
 .nav-icons {
   display: flex;
@@ -100,7 +112,18 @@ p {
 
 .shopDiv{
   padding:5px;
-  width:40%;
+  width:44%;
+  height:325px;
+  border:1px solid lightgrey;
+  border-radius: 25px;
+  margin:5px;
+  float:left;
+  transition:0.3s;
+}
+
+.shopdivHome{
+  padding:5px;
+  width:44%;
   height:325px;
   border:1px solid lightgrey;
   border-radius: 25px;
@@ -116,7 +139,6 @@ p {
 }
 
 .myFooter{
-  position: fixed;
   bottom:0;
   width:100%;
   background-color: #006555;
@@ -195,4 +217,13 @@ div.sideBar {
 
 .cartButton:hover{
   box-shadow: 1px 1px 5px #aaaaaa;
+  
+}
+
+.appDiv{
+  margin-left:10%;
+  width:80%;
+  border-radius:10px;
+    border: 1px solid rgb(217,217,217);
+    background-color: white;
 }

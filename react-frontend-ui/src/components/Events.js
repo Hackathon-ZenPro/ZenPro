@@ -89,7 +89,8 @@ class Events extends Component {
                         </div>
                     </div>
                 </form>
-                <img src="https://tinyurl.com/y67yp5xs" alt="Thank You" style={{width:"100%", height:"30%"}}/>
+                <br/>
+                <h1 style={{textAlign:"center"}}>Thank you!</h1>
             </Modal>
             <Modal isOpen={this.state.isModal2Open} onRequestClose={this.closeModal2}>
                 <h1 style={{textAlign:"center", color:"#006555", fontFamily:"Roboto Slab, serif", textDecoration:"underline"}}>ZenPro Family Sign Up</h1>
@@ -142,7 +143,9 @@ class Events extends Component {
                         </div>
                     </div>
                 </form>
-                <img src="https://tinyurl.com/y67yp5xs" alt="Thank You" style={{width:"100%", height:"30%"}}/>
+
+                <h1 style={{textAlign:"center"}}>Thank you!</h1>
+                
             </Modal>
             <br/>
             <div className="sticky">
@@ -163,7 +166,8 @@ class Events extends Component {
             </div>
 
             <div style={{marginLeft:"5%", width:"80%"}}>
-                <h1 style={{textAlign:"center", color:"#006555", fontFamily:"Roboto Slab, serif", textDecoration:"underline"}}>ZenPro Upcoming Events</h1><br/>
+                {/* <h1 style={{textAlign:"center", color:"#006555", fontFamily:"Roboto Slab, serif", textDecoration:"underline"}}>ZenPro Upcoming Events</h1><br/> */}
+                <h1 style={{}}>ZenPro Upcoming Events</h1><hr/>
 
                 {this.state.events.map((event) => (
                     <div id={event.eventId}>
@@ -174,7 +178,7 @@ class Events extends Component {
                                     <td style={{width:"550px", textAlign:"center"}}>
                                         <h5 style={{textAlign:"center", fontWeight:"bold"}}>{event.eventName}</h5>
                                         <h5 style={{color:"#006555", fontStyle:"italic"}}>{event.eventDescription} To attend this event please click the Sign Up button below and fill out the provided information.</h5>
-                                        <button className="btn btn-success" onClick={this.openModal} id={event.eventId}>Sign Up!!</button>
+                                        <button className="btn btn-success" onClick={this.openModal} id={event.eventId} style={{marginLeft:"5px"}}>Sign Up!!</button>
                                         <h5 style={{fontWeight:"bold"}}>Event Details: {event.eventDate}</h5>
                                     </td>
                                 </tr>

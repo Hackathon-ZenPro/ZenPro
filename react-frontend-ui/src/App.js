@@ -10,29 +10,29 @@ import Events from "./components/Events"
 import ShoppingCart from "./components/ShoppingCart"
 import UserInfo from './components/UserInfo'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import HeaderImg from './components/headerimg.jpg'
 
 function App() {
   return (
-    <>
-<div className="homePage">
+    <div style={{backgroundColor:"rgb(254, 255, 254"}}>
+      <img src={HeaderImg} alt="noimg" style={{width:"78%", marginLeft:"11%", }}/>
+    <ReactNavbar/>
+    <div className="appDiv">
 
-      <BrowserRouter /*style={{justifyContent: "center",alignItems: "center"}}*/>
-        <ReactNavbar/>
-        
+      <BrowserRouter >
             <Switch>
               <Route path='/shop' component={Shop}  />
               <Route path='/events' component={Events}/>
               <Route path='/shoppingcart' component={ShoppingCart} />
               <Route path='/userinfo' component={UserInfo}/>
-              <Route path='/'  component={Home}/> {/* Right after log in, user will go here, all following paths will be buttons on the home screen  */}
-            </Switch>
-            
-          </BrowserRouter>
+              <Route path='/'  component={Home}/> 
+            </Switch>      
+      </BrowserRouter>
 
-      </div>
       
-    </>
-
+    </div>
+    <footer className="myFooter"><span className="foot">Built by ZenPro</span></footer>
+</div>
   );
 }
 
