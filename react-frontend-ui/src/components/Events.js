@@ -89,7 +89,6 @@ class Events extends Component {
                         </div>
                     </div>
                 </form>
-                <img src="https://tinyurl.com/y67yp5xs" alt="Thank You" style={{width:"100%", height:"30%"}}/>
             </Modal>
             <Modal isOpen={this.state.isModal2Open} onRequestClose={this.closeModal2}>
                 <h1 style={{textAlign:"center", color:"#006555", fontFamily:"Roboto Slab, serif", textDecoration:"underline"}}>ZenPro Family Sign Up</h1>
@@ -142,7 +141,6 @@ class Events extends Component {
                         </div>
                     </div>
                 </form>
-                <img src="https://tinyurl.com/y67yp5xs" alt="Thank You" style={{width:"100%", height:"30%"}}/>
             </Modal>
             <br/>
             <div className="sticky">
@@ -157,7 +155,7 @@ class Events extends Component {
                 <h6 style={{textAlign:"center"}}>Gain access to exclusive deals</h6>
                 <h6 style={{textAlign:"center"}}>Earn bonus reward points</h6>
                 <h6 style={{textAlign:"center"}}>Earn free ZenPro merch</h6>
-                <button className="btn btn-success" onClick={this.openModal2}>Sign Up!!</button>
+                <button className="btn btn-success, zenFamily" onClick={this.openModal2}>Sign Up!!</button>
 
                 <img src="https://tinyurl.com/y2stnkt5" alt="Point Up" style={{width:"100%", height:"250px", border:"2px solid #006555"}}/>
             </div>
