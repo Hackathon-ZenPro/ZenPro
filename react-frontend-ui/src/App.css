@@ -3,6 +3,10 @@ img {
   height: 75px;
 }
 
+.label{
+  color: #006555;
+}
+
 .sticky{
   width: 23% !important;
   border: 1px solid #006555 !important;
