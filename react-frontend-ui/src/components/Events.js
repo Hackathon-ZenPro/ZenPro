@@ -155,6 +155,8 @@ class Events extends Component {
                 <br/>
                 <h6 style={{textAlign:"center"}}>Become apart of the ZenPro family!!</h6>
                 <h6 style={{textAlign:"center"}}>Gain access to exclusive deals</h6>
+                <h6 style={{textAlign:"center"}}>Earn bonus reward points</h6>
+                <h6 style={{textAlign:"center"}}>Earn free ZenPro merch</h6>
                 <button className="btn btn-success" onClick={this.openModal2}>Sign Up!!</button>
 
                 <img src="https://tinyurl.com/y2stnkt5" alt="Point Up" style={{width:"100%", height:"250px", border:"2px solid #006555"}}/>
