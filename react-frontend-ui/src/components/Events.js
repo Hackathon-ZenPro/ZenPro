@@ -3,29 +3,6 @@ import axios from 'axios';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
  
-<<<<<<< HEAD
-class Event extends Component {
-  state = {
-    date: new Date(),
-  }
- 
-  onChange = date => this.setState({ date })
- 
-  render() {
-    return (
-      <div>
-        <Calendar
-          onChange={this.onChange}
-          value={this.state.date}
-          minDate={new Date()}
-        />
-      </div>
-    );
-  }
-}
-
-export default Event;
-=======
 class Events extends Component {
     constructor(props){
         super(props)
@@ -96,4 +73,3 @@ class Events extends Component {
 }
 
 export default Events;
->>>>>>> c9c88600df6179516a2d294aa6ad737a43318240

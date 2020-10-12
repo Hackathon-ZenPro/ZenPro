@@ -1,10 +1,6 @@
 import React from "react";
 import "../App.css";
 import Hero from "./Hero"
-<<<<<<< HEAD:react-frontend-ui/src/components/Home.js
-=======
-
->>>>>>> c9c88600df6179516a2d294aa6ad737a43318240:react-frontend-ui/src/components/Home.js
 function Home() {
   return (
     <>
