@@ -10,7 +10,8 @@ class Events extends Component {
         this.state={
             date: new Date(),
             events:[],
-            isModalOpen: false
+            isModalOpen: false,
+            isModal2Open: false
         }
     }
 
@@ -31,6 +32,8 @@ class Events extends Component {
     onChange = date => this.setState({ date })
     openModal = () => this.setState({ isModalOpen: true})
     closeModal = () => this.setState({ isModalOpen: false})
+    openModal2 = () => this.setState({ isModal2Open: true})
+    closeModal2 = () => this.setState({ isModal2Open: false})
     
     render() {
         return (
@@ -79,10 +82,63 @@ class Events extends Component {
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-11">
-                            <button type="submit" class="btn btn-primary">Sign in</button>
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
                         </div>
                         <div class="form-group col-md-0">
                             <button className="btn btn-danger" onClick={this.closeModal}>Close</button>
+                        </div>
+                    </div>
+                </form>
+                <img src="https://tinyurl.com/y67yp5xs" alt="Thank You" style={{width:"100%", height:"30%"}}/>
+            </Modal>
+            <Modal isOpen={this.state.isModal2Open} onRequestClose={this.closeModal2}>
+                <h1 style={{textAlign:"center", color:"#006555", fontFamily:"Roboto Slab, serif", textDecoration:"underline"}}>ZenPro Family Sign Up</h1>
+                <br/>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4" className="label">First Name</label>
+                            <input type="text" class="form-control" id="fname" placeholder="First Name"/>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4" className="label">Last Name</label>
+                            <input type="text" class="form-control" id="lname" placeholder="Last Name"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4" className="label">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email"/>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4" className="label">Password</label>
+                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress" className="label">Address</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"/>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity" className="label">City</label>
+                            <input type="text" class="form-control" id="inputCity" placeholder="City"/>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState" className="label">State</label>
+                            <input type="text" class="form-control" id="inputState" placeholder="State"/>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip" className="label">Zip</label>
+                            <input type="text" class="form-control" id="inputZip" placeholder="#####"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-11">
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                        </div>
+                        <div class="form-group col-md-0">
+                            <button className="btn btn-danger" onClick={this.closeModal2}>Close</button>
                         </div>
                     </div>
                 </form>
@@ -99,7 +155,7 @@ class Events extends Component {
                 <br/>
                 <h6 style={{textAlign:"center"}}>Become apart of the ZenPro family!!</h6>
                 <h6 style={{textAlign:"center"}}>Gain access to exclusive deals</h6>
-                <h6 style={{textAlign:"center"}}><a href="">Sign Up Now!!</a></h6>
+                <button className="btn btn-success" onClick={this.openModal2}>Sign Up!!</button>
 
                 <img src="https://tinyurl.com/y2stnkt5" alt="Point Up" style={{width:"100%", height:"250px", border:"2px solid #006555"}}/>
             </div>
